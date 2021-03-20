@@ -1,0 +1,83 @@
+// GAMERS DON'T PLAY TO LOSE
+//Name: NAVDEEP KAUR
+//Student ID: 201904550
+// Submission Date: March19,2021
+//Class IN2203 Group 2(ISBA Semester2)
+//Name of work: Assignmenr1: The Number Guessing Game or The Gambling Game
+
+package game;
+import java.util.Random;
+import java.util.Scanner;
+public class Gamblinggame {
+
+	// Function that implements the number guessing game
+			public static void main(String[] args){ 
+				{ 
+			   // Creating a random number generator 
+				Random random = new Random();
+			   // Create Scanner Class for getting input from Player
+				try(Scanner scanner = new Scanner(System.in)){ 
+			    System.out.println("---------------------------------------------");
+				System.out.println("Welcome to The Number Guessing Gambling Game!");
+				System.out.println("---------------------------------------------");
+				System.out.println("Would you like to play a game? (y/n)");
+			    System.out.print("Enter y/n: ");
+			    String Playerinput = scanner.nextLine();
+			    
+	            // continue when Player enter 'y' or 'n'
+			    if (Playerinput.equals("n")) { System.out.println("Goodbye");
+			    System.out.println("Thank You.");
+			    } else { 
+				System.out.println("Let's Play the Game");
+	            System.out.println("Remember, If you win the game, you will get a cash prize.");
+		     
+	            //using random generator for choose a random number between 0 and 100
+	            int Number = random.nextInt(100);
+	            System .out.println("Number:" + Number);
+	            
+	            
+	            	//getting input from Player
+	          
+	            Scanner mykeyboard = new Scanner(System.in);
+	            System.out.print("Enter a guess number between 0 to 100:");
+	            System.out.println();
+		        System.out.println("Player Number:");
+		        boolean win = false;
+		        while (win == false)
+		        {
+		         int Playerguess;
+		        	Playerguess = mykeyboard.nextInt();
+		        		
+		        	// if the number is guessed right,while loop is terminated 
+					if ( Playerguess == Number ) {
+		        	System.out.println("You guess it right");
+		        	System.out.println("Congratulations! You have won the game and the prize money");
+		        	mykeyboard.close();
+		        	win = true;
+		        	}
+					//if the guessed number is low, program should tell us
+		        	else if( Playerguess < Number ){
+		        	System.out.println("Your Guess is Low");
+		   		   	}  
+					//if the guessed number is high, program should tell us
+		        	else if( Playerguess > Number ) {
+		        	System.out.println("Your Guess is High");
+		           	}else if(Playerguess == Number) {
+	        		System.out.println("Congratulations! Your guess is right");
+	        		System.out.println("You have won the game and the prize money");
+	        		mykeyboard.close();
+	        		break;}
+	                {if( Playerguess != Number ) {
+	                System.out.println("Sorry wrong guess");	
+	        		System.out.println("The correct answer is: " + Number);
+	        		System.out.println("Better luck next time");
+	        	    mykeyboard.close();
+	        		break;}
+	        		}
+	        		}
+		        	
+		        }
+	        } 
+	   } 
+	}
+ }
